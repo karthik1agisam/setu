@@ -24,6 +24,8 @@ uv run python scripts/understand_query.py "your question"   # LLM extract (needs
 uv run python scripts/reason_query.py "your question"       # structured verdict (needs Ollama)
 uv run python scripts/rag_query.py "your question"          # baseline RAG, unverified (B3)
 uv run python scripts/run_baseline.py                       # baseline over seed eval set
+uv run python scripts/calibrate_nli.py                      # NLI threshold calibration
+uv run python evaluation/eval_claims.py                     # claim-level verification eval
 ```
 
 ## Setup

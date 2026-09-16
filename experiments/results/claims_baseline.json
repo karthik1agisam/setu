@@ -1,0 +1,385 @@
+{
+  "n_answers": 12,
+  "total_claims": 35,
+  "unsupported_or_contradicted": 17,
+  "unsupported_claim_rate": 0.4857142857142857,
+  "rows": [
+    {
+      "qid": "re01",
+      "answer": "Eligibility for the PM-KISAN scheme is primarily based on landholding, with the definition of a landholder farmer\u2019s family as \"a family comprising of husband, wife, and minor children who own cultivable land as per land records of the concerned State/UT\" [pmkisan:operational_guidelines_2019:0001]. However, certain categories are excluded, including institutional land holders, and farmer families where one or more members belong to specific high-income or professional categories such as former and present holders of constitutional posts, former and present Ministers, and serving or retired government employees with a monthly pension of Rs.10,000 or more, among others [pmkisan:operational_guidelines_2019:0002].",
+      "n_claims": 5,
+      "supported": 3,
+      "unsupported": 2,
+      "contradicted": 0,
+      "unsupported_rate": 0.4,
+      "claims": [
+        {
+          "claim": "Eligibility for the PM-KISAN scheme is primarily based on landholding.",
+          "status": "supported",
+          "best_chunk": "pmkisan:faq:0002",
+          "entailment": 0.981,
+          "contradiction": 0.001
+        },
+        {
+          "claim": "A landholder farmer\u2019s family is defined as 'a family comprising of husband, wife, and minor children who own cultivable land as per land records of the concerned State/UT'.",
+          "status": "unsupported",
+          "best_chunk": "pmkisan:faq:0004",
+          "entailment": 0.073,
+          "contradiction": 0.032
+        },
+        {
+          "claim": "Certain categories are excluded from the PM-KISAN scheme.",
+          "status": "supported",
+          "best_chunk": "pmkisan:operational_guidelines_2019:0001",
+          "entailment": 0.999,
+          "contradiction": 0.001
+        },
+        {
+          "claim": "Excluded categories include institutional land holders.",
+          "status": "supported",
+          "best_chunk": "pmkisan:operational_guidelines_2019:0001",
+          "entailment": 0.997,
+          "contradiction": 0.071
+        },
+        {
+          "claim": "Excluded categories also include farmer families where one or more members belong to specific high-income or professional categories such as former and present holders of constitutional posts, former and present Ministers, and serving or retired government employees with a monthly pension of Rs.10,000 or more.",
+          "status": "unsupported",
+          "best_chunk": "pmkisan:operational_guidelines_2019:0001",
+          "entailment": 0.407,
+          "contradiction": 0.02
+        }
+      ]
+    },
+    {
+      "qid": "re02",
+      "answer": "No, a serving or retired officer and employee of the Central/State Government Ministries/Offices/Departments and its field units, Central or State Public Sector Enterprises (PSEs) and Attached offices/Autonomous Institutions under Government, as well as regular employees of local bodies, are not eligible to get benefit under the PM-KISAN scheme [chunk_id: pmkisan:faq:0003]. However, serving or retired Multi Tasking Staff/Class IV/Group D employees are eligible if their families meet the other criteria and are not covered under other exclusion criteria.",
+      "n_claims": 2,
+      "supported": 1,
+      "unsupported": 0,
+      "contradicted": 1,
+      "unsupported_rate": 0.5,
+      "claims": [
+        {
+          "claim": "A serving or retired officer and employee of the Central/State Government Ministries/Offices/Departments and its field units, Central or State Public Sector Enterprises (PSEs) and Attached offices/Autonomous Institutions under Government, as well as regular employees of local bodies, are not eligible to get benefit under the PM-KISAN scheme.",
+          "status": "contradicted",
+          "best_chunk": "pmkisan:faq:0001",
+          "entailment": 0.377,
+          "contradiction": 0.523
+        },
+        {
+          "claim": "Serving or retired Multi Tasking Staff/Class IV/Group D employees are eligible if their families meet the other criteria and are not covered under other exclusion criteria.",
+          "status": "supported",
+          "best_chunk": "pmkisan:faq:0003",
+          "entailment": 0.995,
+          "contradiction": 0.011
+        }
+      ]
+    },
+    {
+      "qid": "re03",
+      "answer": "No, income tax payers are not eligible to get benefits under the PM-KISAN scheme. According to [pmkisan:faq:0002], if any member of the family is an income tax payer in the last assessment year, the family is not eligible for benefit under the scheme.",
+      "n_claims": 1,
+      "supported": 0,
+      "unsupported": 0,
+      "contradicted": 1,
+      "unsupported_rate": 1.0,
+      "claims": [
+        {
+          "claim": "No, income tax payers are not eligible to get benefits under the PM-KISAN scheme.",
+          "status": "contradicted",
+          "best_chunk": "pmkisan:operational_guidelines_2019:0010",
+          "entailment": 0.023,
+          "contradiction": 0.998
+        }
+      ]
+    },
+    {
+      "qid": "re04",
+      "answer": "PM-KISAN provides a benefit of Rs. 2000 per installment, given three times a year. Therefore, the total annual payment per eligible beneficiary is Rs. 6000. [pmkisan:faq:0002] [pmkisan:faq:0004]",
+      "n_claims": 3,
+      "supported": 3,
+      "unsupported": 0,
+      "contradicted": 0,
+      "unsupported_rate": 0.0,
+      "claims": [
+        {
+          "claim": "PM-KISAN provides a benefit of Rs. 2000 per installment.",
+          "status": "supported",
+          "best_chunk": "pmkisan:faq:0002",
+          "entailment": 0.979,
+          "contradiction": 0.01
+        },
+        {
+          "claim": "PM-KISAN gives a payment three times a year.",
+          "status": "supported",
+          "best_chunk": "pmkisan:faq:0002",
+          "entailment": 0.98,
+          "contradiction": 0.015
+        },
+        {
+          "claim": "The total annual payment per eligible beneficiary is Rs. 6000.",
+          "status": "supported",
+          "best_chunk": "pmkisan:operational_guidelines_2019:0010",
+          "entailment": 0.57,
+          "contradiction": 0.185
+        }
+      ]
+    },
+    {
+      "qid": "re05",
+      "answer": "Yes, land transferred between December 2018 and January 2019 is eligible for PM-KISAN benefits. According to the operational guidelines [pmkisan:operational_guidelines_2019:0003], in cases where the transfer of ownership of cultivable land has happened between December 1, 2018, and January 31, 2019, due to reasons such as purchase, succession, will, or gift, the first installment during the financial year (2018-19) shall be a proportionate amount from the date of transfer till March 31, 2019, with respect to the 4 months period.",
+      "n_claims": 2,
+      "supported": 0,
+      "unsupported": 0,
+      "contradicted": 2,
+      "unsupported_rate": 1.0,
+      "claims": [
+        {
+          "claim": "Land transferred between December 2018 and January 2019 is eligible for PM-KISAN benefits.",
+          "status": "contradicted",
+          "best_chunk": "pmkisan:operational_guidelines_2019:0003",
+          "entailment": 0.934,
+          "contradiction": 0.987
+        },
+        {
+          "claim": "In cases where the transfer of ownership of cultivable land has happened between December 1, 2018, and January 31, 2019, due to reasons such as purchase, succession, will, or gift, the first installment during the financial year (2018-19) shall be a proportionate amount from the date of transfer till March 31, 2019, with respect to the 4 months period.",
+          "status": "contradicted",
+          "best_chunk": "pmkisan:operational_guidelines_2019:0003",
+          "entailment": 0.11,
+          "contradiction": 0.693
+        }
+      ]
+    },
+    {
+      "qid": "re06",
+      "answer": "Eligibility for a PMAY-G house is based on housing deprivation parameters from the Socio-Economic and Caste Census (SECC) 2011 data, specifically targeting households that are houseless or living in zero, one, or two rooms with kutcha walls and roofs [chunk_id: pmayg:framework_for_implementation_2022:0007]. Additional beneficiaries may be identified from the Awaas+ list [chunk_id: pmayg:framework_for_implementation_2022:0007]. Households must also meet other criteria, such as not having availed benefits from other government schemes or constructed a pucca house from their own funds [chunk_id: pmayg:framework_for_implementation_2022:0027].",
+      "n_claims": 4,
+      "supported": 2,
+      "unsupported": 2,
+      "contradicted": 0,
+      "unsupported_rate": 0.5,
+      "claims": [
+        {
+          "claim": "Eligibility for a PMAY-G house is based on housing deprivation parameters from the Socio-Economic and Caste Census (SECC) 2011 data.",
+          "status": "unsupported",
+          "best_chunk": "pmayg:framework_for_implementation_2022:0007",
+          "entailment": 0.489,
+          "contradiction": 0.037
+        },
+        {
+          "claim": "Specifically targeting households that are houseless or living in zero, one, or two rooms with kutcha walls and roofs.",
+          "status": "supported",
+          "best_chunk": "pmayg:framework_for_implementation_2022:0007",
+          "entailment": 0.696,
+          "contradiction": 0.264
+        },
+        {
+          "claim": "Additional beneficiaries may be identified from the Awaas+ list.",
+          "status": "supported",
+          "best_chunk": "pmayg:framework_for_implementation_2022:0046",
+          "entailment": 0.995,
+          "contradiction": 0.018
+        },
+        {
+          "claim": "Households must also meet other criteria, such as not having availed benefits from other government schemes or constructed a pucca house from their own funds.",
+          "status": "unsupported",
+          "best_chunk": "pmayg:framework_for_implementation_2022:0027",
+          "entailment": 0.062,
+          "contradiction": 0.055
+        }
+      ]
+    },
+    {
+      "qid": "re07",
+      "answer": "Yes, a family living in a kutcha house may qualify for PMAY-G. According to the framework for implementation of PMAY-G [pmayg:framework_for_implementation_2022:0007], the scheme aims to provide pucca houses with basic amenities to households living in kutcha and dilapidated houses in rural areas. The selection of beneficiaries is based on housing deprivation parameters from the Socio Economic and Caste Census (SECC), 2011 data, which includes households living in kutcha houses.",
+      "n_claims": 3,
+      "supported": 2,
+      "unsupported": 1,
+      "contradicted": 0,
+      "unsupported_rate": 0.3333333333333333,
+      "claims": [
+        {
+          "claim": "a family living in a kutcha house may qualify for PMAY-G",
+          "status": "supported",
+          "best_chunk": "pmayg:framework_for_implementation_2022:0014",
+          "entailment": 0.999,
+          "contradiction": 0.053
+        },
+        {
+          "claim": "the scheme aims to provide pucca houses with basic amenities to households living in kutcha and dilapidated houses in rural areas",
+          "status": "supported",
+          "best_chunk": "pmayg:framework_for_implementation_2022:0005",
+          "entailment": 0.937,
+          "contradiction": 0.316
+        },
+        {
+          "claim": "the selection of beneficiaries is based on housing deprivation parameters from the Socio Economic and Caste Census (SECC), 2011 data",
+          "status": "unsupported",
+          "best_chunk": "pmayg:framework_for_implementation_2022:0007",
+          "entailment": 0.093,
+          "contradiction": 0.026
+        }
+      ]
+    },
+    {
+      "qid": "re08",
+      "answer": "The Gram Sabha plays a crucial role in the selection of PMAY-G beneficiaries [pmayg:framework_for_implementation_2022:0054]. Specifically, it is mentioned that the Gram Sabha is responsible for verifying the priority lists prepared based on SECC-2011 and additional households from Awaas+ lists, ensuring the selection process is transparent and participatory.",
+      "n_claims": 4,
+      "supported": 1,
+      "unsupported": 1,
+      "contradicted": 2,
+      "unsupported_rate": 0.75,
+      "claims": [
+        {
+          "claim": "The Gram Sabha plays a crucial role in the selection of PMAY-G beneficiaries.",
+          "status": "contradicted",
+          "best_chunk": "pmayg:framework_for_implementation_2022:0054",
+          "entailment": 0.993,
+          "contradiction": 0.549
+        },
+        {
+          "claim": "The Gram Sabha is responsible for verifying the priority lists prepared based on SECC-2011.",
+          "status": "contradicted",
+          "best_chunk": "pmayg:framework_for_implementation_2022:0046",
+          "entailment": 0.673,
+          "contradiction": 0.766
+        },
+        {
+          "claim": "The Gram Sabha is also responsible for verifying additional households from Awaas+ lists.",
+          "status": "unsupported",
+          "best_chunk": "pmayg:framework_for_implementation_2022:0046",
+          "entailment": 0.109,
+          "contradiction": 0.011
+        },
+        {
+          "claim": "The selection process is ensured to be transparent and participatory.",
+          "status": "supported",
+          "best_chunk": "pmayg:framework_for_implementation_2022:0054",
+          "entailment": 0.506,
+          "contradiction": 0.019
+        }
+      ]
+    },
+    {
+      "qid": "re09",
+      "answer": "The PM-JAY helpline number for beneficiaries is 14555/1800-111-565. Beneficiaries can also reach out to this number for nearest empanelled hospitals to provide feedback and for any grievances. This service is available 24X7. [pmjay:beneficiary_empowerment_guidebook:0011]",
+      "n_claims": 5,
+      "supported": 5,
+      "unsupported": 0,
+      "contradicted": 0,
+      "unsupported_rate": 0.0,
+      "claims": [
+        {
+          "claim": "The PM-JAY helpline number for beneficiaries is 14555/1800-111-565.",
+          "status": "supported",
+          "best_chunk": "pmjay:beneficiary_empowerment_guidebook:0011",
+          "entailment": 0.971,
+          "contradiction": 0.396
+        },
+        {
+          "claim": "Beneficiaries can reach out to this number for nearest empanelled hospitals.",
+          "status": "supported",
+          "best_chunk": "pmjay:beneficiary_empowerment_guidebook:0011",
+          "entailment": 0.995,
+          "contradiction": 0.051
+        },
+        {
+          "claim": "Beneficiaries can use this number to provide feedback.",
+          "status": "supported",
+          "best_chunk": "pmjay:beneficiary_empowerment_guidebook:0011",
+          "entailment": 0.995,
+          "contradiction": 0.05
+        },
+        {
+          "claim": "Beneficiaries can use this number to raise grievances.",
+          "status": "supported",
+          "best_chunk": "pmjay:beneficiary_empowerment_guidebook:0011",
+          "entailment": 0.961,
+          "contradiction": 0.091
+        },
+        {
+          "claim": "This service is available 24X7.",
+          "status": "supported",
+          "best_chunk": "pmjay:beneficiary_empowerment_guidebook:0011",
+          "entailment": 0.958,
+          "contradiction": 0.004
+        }
+      ]
+    },
+    {
+      "qid": "re10",
+      "answer": "No, patients do not have to pay for PM-JAY hospitalization. According to the guidebook excerpt [pmjay:beneficiary_empowerment_guidebook:0013], the hospitalization service under PM-JAY is free of cost, and beneficiaries should be informed that they should not pay any money for their hospitalization or related services. If any money is demanded, they should report it to the helpline.",
+      "n_claims": 4,
+      "supported": 0,
+      "unsupported": 0,
+      "contradicted": 4,
+      "unsupported_rate": 1.0,
+      "claims": [
+        {
+          "claim": "Patients do not have to pay for PM-JAY hospitalization.",
+          "status": "contradicted",
+          "best_chunk": "pmjay:beneficiary_empowerment_guidebook:0019",
+          "entailment": 0.98,
+          "contradiction": 0.664
+        },
+        {
+          "claim": "The hospitalization service under PM-JAY is free of cost.",
+          "status": "contradicted",
+          "best_chunk": "pmjay:beneficiary_empowerment_guidebook:0002",
+          "entailment": 0.946,
+          "contradiction": 0.603
+        },
+        {
+          "claim": "Beneficiaries should be informed that they should not pay any money for their hospitalization or related services.",
+          "status": "contradicted",
+          "best_chunk": "pmjay:beneficiary_empowerment_guidebook:0006",
+          "entailment": 0.766,
+          "contradiction": 0.951
+        },
+        {
+          "claim": "If any money is demanded, beneficiaries should report it to the helpline.",
+          "status": "contradicted",
+          "best_chunk": "pmjay:beneficiary_empowerment_guidebook:0006",
+          "entailment": 0.4,
+          "contradiction": 0.633
+        }
+      ]
+    },
+    {
+      "qid": "re11",
+      "answer": "The parental income limit for the Post Matric Scholarship for SC students is Rs. 2,50,000/- (Rupees Two lakh Fifty thousand only) during the last Financial Year [chunk_id: pmssc:scheme_guidelines:0005].",
+      "n_claims": 1,
+      "supported": 0,
+      "unsupported": 1,
+      "contradicted": 0,
+      "unsupported_rate": 1.0,
+      "claims": [
+        {
+          "claim": "The parental income limit for the Post Matric Scholarship for SC students is Rs. 2,50,000/-",
+          "status": "unsupported",
+          "best_chunk": "pmssc:scheme_guidelines:0005",
+          "entailment": 0.053,
+          "contradiction": 0.017
+        }
+      ]
+    },
+    {
+      "qid": "re12",
+      "answer": "No, a non-SC student cannot get the Post Matric SC scholarship as it is specifically designed for students belonging to Scheduled Castes [chunk_id: pmssc:scheme_guidelines:0001].",
+      "n_claims": 1,
+      "supported": 1,
+      "unsupported": 0,
+      "contradicted": 0,
+      "unsupported_rate": 0.0,
+      "claims": [
+        {
+          "claim": "a non-SC student cannot get the Post Matric SC scholarship",
+          "status": "supported",
+          "best_chunk": "pmssc:scheme_guidelines:0001",
+          "entailment": 0.989,
+          "contradiction": 0.299
+        }
+      ]
+    }
+  ]
+}

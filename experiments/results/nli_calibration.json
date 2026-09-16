@@ -1,0 +1,153 @@
+{
+  "best": {
+    "entail_thr": 0.5,
+    "contra_thr": 0.5,
+    "accuracy": 0.6666666666666666
+  },
+  "scored": [
+    {
+      "id": "d01",
+      "premise": "2 hectares shall be provided a benefit of Rs.6000 per annum per family payable in three equal installments, every four months.",
+      "hypothesis": "PM-KISAN pays Rs. 6000 per year per family.",
+      "label": "entailed",
+      "entailment": 0.45265993475914,
+      "contradiction": 0.1273672729730606
+    },
+    {
+      "id": "d02",
+      "premise": "Scholarships will be paid to the students whose parents'/guardians' income from all sources does not exceed Rs. 2,50,000/- (Rupees Two lakh Fifty thousand only) during the last Financial Year.",
+      "hypothesis": "The parental income limit for the SC post-matric scholarship is Rs. 2.5 lakh.",
+      "label": "entailed",
+      "entailment": 0.956904411315918,
+      "contradiction": 0.01759491302073002
+    },
+    {
+      "id": "d03",
+      "premise": "The following categories of beneficiaries of higher economic status shall not be eligible for benefit under the scheme: v) All Persons who paid Income Tax in last assessment year.",
+      "hypothesis": "Income tax payers are not eligible for PM-KISAN.",
+      "label": "entailed",
+      "entailment": 0.0023182465229183435,
+      "contradiction": 0.8253529071807861
+    },
+    {
+      "id": "d04",
+      "premise": "Inform that the hospitalization service is free of cost and that no money needs to be paid.",
+      "hypothesis": "PM-JAY hospitalization is free of cost for the beneficiary.",
+      "label": "entailed",
+      "entailment": 0.8676486015319824,
+      "contradiction": 0.0007147833821363747
+    },
+    {
+      "id": "d05",
+      "premise": "The universe of eligible beneficiaries under PMAY-G will include all the houseless and households living in zero, one or two room with kutcha wall and kutcha roof (kutcha houses) as per SECC data.",
+      "hypothesis": "Households living in kutcha houses are eligible for PMAY-G.",
+      "label": "entailed",
+      "entailment": 0.9908157587051392,
+      "contradiction": 0.0008554232772439718
+    },
+    {
+      "id": "d06",
+      "premise": "The scholarships are open to Nationals of India only.",
+      "hypothesis": "Only Indian nationals can apply for the scholarship.",
+      "label": "entailed",
+      "entailment": 0.9972872734069824,
+      "contradiction": 0.0001993806945392862
+    },
+    {
+      "id": "d07",
+      "premise": "Scholarships will be paid to the students whose parents'/guardians' income from all sources does not exceed Rs. 2,50,000/- during the last Financial Year.",
+      "hypothesis": "The income limit for the scholarship is Rs. 5 lakh.",
+      "label": "contradicted",
+      "entailment": 0.17601826786994934,
+      "contradiction": 0.7840589880943298
+    },
+    {
+      "id": "d08",
+      "premise": "2 hectares shall be provided a benefit of Rs.6000 per annum per family payable in three equal installments.",
+      "hypothesis": "PM-KISAN pays Rs. 10,000 per year per family.",
+      "label": "contradicted",
+      "entailment": 0.007409112527966499,
+      "contradiction": 0.9694550037384033
+    },
+    {
+      "id": "d09",
+      "premise": "The following categories of beneficiaries of higher economic status shall not be eligible: v) All Persons who paid Income Tax in last assessment year.",
+      "hypothesis": "Income tax payers are eligible for PM-KISAN benefits.",
+      "label": "contradicted",
+      "entailment": 0.01834813505411148,
+      "contradiction": 0.25727689266204834
+    },
+    {
+      "id": "d10",
+      "premise": "The scholarships are open to Nationals of India only.",
+      "hypothesis": "Foreign nationals can apply for this scholarship.",
+      "label": "contradicted",
+      "entailment": 0.0037024805787950754,
+      "contradiction": 0.9853406548500061
+    },
+    {
+      "id": "d11",
+      "premise": "Whether transfer of ownership occurred between 01.12.2018 and 31.01.2019 are eligible for consideration?",
+      "hypothesis": "PM-JAY covers heart surgery for all citizens.",
+      "label": "neutral",
+      "entailment": 0.009164544753730297,
+      "contradiction": 0.4755922555923462
+    },
+    {
+      "id": "d12",
+      "premise": "Scholarships will be paid to the students whose parents'/guardians' income from all sources does not exceed Rs. 2,50,000/-.",
+      "hypothesis": "The applicant must be under 25 years of age.",
+      "label": "neutral",
+      "entailment": 0.0006397078977897763,
+      "contradiction": 0.00034308034810237586
+    },
+    {
+      "id": "d13",
+      "premise": "Under PMAY-G, minimum 60% of the target at the national level is earmarked for SC/ST households.",
+      "hypothesis": "PMAY-G gives a subsidy of Rs. 5 lakh per house.",
+      "label": "neutral",
+      "entailment": 0.0003116339212283492,
+      "contradiction": 0.00012752015027217567
+    },
+    {
+      "id": "d14",
+      "premise": "Kindly contact the State SHA Helpline or National Call Centre 14555/1800-111-565 in case of any queries.",
+      "hypothesis": "PM-JAY was launched in the year 2015.",
+      "label": "neutral",
+      "entailment": 0.0016646934673190117,
+      "contradiction": 0.00093837920576334
+    },
+    {
+      "id": "d15",
+      "premise": "All superannuated/retired pensioners whose monthly pension is Rs.10,000/-or more shall not be eligible.",
+      "hypothesis": "Pensioners drawing less than Rs.10,000 monthly are excluded.",
+      "label": "contradicted",
+      "entailment": 0.665614128112793,
+      "contradiction": 0.05593261495232582
+    },
+    {
+      "id": "d16",
+      "premise": "Only those candidates who belong to Scheduled Castes so specified in relation to the State/Union Territory to which the applicant actually belongs will be eligible.",
+      "hypothesis": "An OBC student is eligible for the SC post-matric scholarship.",
+      "label": "contradicted",
+      "entailment": 0.18575136363506317,
+      "contradiction": 0.25013890862464905
+    },
+    {
+      "id": "d17",
+      "premise": "Construction of a toilet has been made an integral part of the PMAY-G house.",
+      "hypothesis": "PMAY-G houses include a toilet.",
+      "label": "entailed",
+      "entailment": 0.9847021698951721,
+      "contradiction": 0.00026542824343778193
+    },
+    {
+      "id": "d18",
+      "premise": "The benefit shall be paid to only those farmers' families whose names are entered into the land records.",
+      "hypothesis": "A farmer whose name is not in land records can still get the benefit.",
+      "label": "contradicted",
+      "entailment": 0.03910546749830246,
+      "contradiction": 0.052417006343603134
+    }
+  ]
+}
