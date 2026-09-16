@@ -21,6 +21,9 @@ make ingest && make chunk              # PDFs → chunks
 uv run python scripts/build_index.py   # BGE-M3 → FAISS index
 make eval-retrieval CONFIG=hybrid      # retrieval metrics
 uv run python scripts/understand_query.py "your question"   # LLM extract (needs Ollama)
+uv run python scripts/reason_query.py "your question"       # structured verdict (needs Ollama)
+uv run python scripts/rag_query.py "your question"          # baseline RAG, unverified (B3)
+uv run python scripts/run_baseline.py                       # baseline over seed eval set
 ```
 
 ## Setup
