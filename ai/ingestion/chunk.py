@@ -135,10 +135,47 @@ def load_blocks(blocks_file: Path) -> list[dict]:
     return [json.loads(line) for line in blocks_file.open()]
 
 
+LIST_ITEM_START_RE = re.compile(r"^(\(?[ivx]{1,4}\)?|\([a-z]\)|\([ivx]+\))\s", re.IGNORECASE)
+
+
+def _ancestor_intro(recs: list[dict], path: str) -> str | None:
+    """Intro sentence of the nearest ancestor clause for a section path."""
+    if not path:
+        return None
+    comps = path.split(" > ")
+    by_path = {r["section_path"]: r["text"] for r in recs if r["section_path"]}
+    for i in range(len(comps) - 1, 0, -1):
+        parent = " > ".join(comps[:i])
+        if parent in by_path:
+            intro = _sentences(by_path[parent])[0] if by_path[parent] else ""
+            return intro[:400] or None
+    return None
+
+
+def add_context_prefixes(recs: list[dict], chunks: list[Chunk]) -> None:
+    """Chunks starting mid-list get the parent clause's intro prepended.
+
+    A continuation chunk like 'iii) All serving or retired officers...' carries
+    no eligibility vocabulary — without the parent intro ('4.1 The following
+    categories shall NOT be eligible'), retrieval cannot find it. Measured
+    failure mode: PM-KISAN exclusion items were unretrievable before this.
+    """
+    for c in chunks:
+        if not LIST_ITEM_START_RE.match(c.text):
+            continue
+        for sp in c.section_paths[:1]:
+            intro = _ancestor_intro(recs, sp)
+            if intro:
+                c.text = f"[Context: {intro}]\n{c.text}"
+                c.n_words = _words(c.text)
+                break
+
+
 def chunk_document(blocks_file: Path, out_file: Path) -> list[Chunk]:
     recs = load_blocks(blocks_file)
     stem = blocks_file.stem.removesuffix(".blocks")
     chunks = chunk_blocks(recs, doc_stem=f"{recs[0]['scheme']}:{stem}")
+    add_context_prefixes(recs, chunks)
     out_file.parent.mkdir(parents=True, exist_ok=True)
     with out_file.open("w") as fh:
         for c in chunks:

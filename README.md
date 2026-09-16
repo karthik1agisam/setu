@@ -10,16 +10,17 @@ SETU says so — it never invents rules.
 
 ## Status
 
-Phase 4 — retrieval foundation complete: 4 schemes → 170 clause-level chunks
-with full provenance; BM25 lexical baseline + eval harness running
-(R@5=0.500, MRR=0.231 on the seed eval set — see `docs/evaluation.md`).
+Phase 5 — retrieval stack complete: 4 schemes → 170 provenance-carrying
+chunks; BM25 + BGE-M3 dense + RRF hybrid measured on the seed eval set
+(hybrid wins: R@1 0.083→0.250, MRR 0.231→0.380 — see `docs/evaluation.md`).
 Development proceeds in verified phases per
 [`docs/SETU_MASTER_IMPLEMENTATION_PLAN.md`](docs/SETU_MASTER_IMPLEMENTATION_PLAN.md).
 
 ```bash
 uv run python scripts/download_docs.py   # fetch + validate corpus
 make ingest && make chunk              # PDFs → chunks
-make eval-retrieval CONFIG=lexical     # retrieval metrics
+uv run python scripts/build_index.py   # BGE-M3 → FAISS index
+make eval-retrieval CONFIG=hybrid      # retrieval metrics
 ```
 
 ## Setup

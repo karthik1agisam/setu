@@ -24,6 +24,38 @@ from pathlib import Path
 from ai.retrieval.bm25 import BM25Index
 from ai.retrieval.store import ChunkStore
 
+
+def _build_search(config: str, store: ChunkStore):
+    """Return search(query, k, scheme) -> [(chunk_id, score)] for a config."""
+    if config == "lexical":
+        bm25 = BM25Index(store)
+        return lambda q, k, s: bm25.search(q, k=k, scheme=s)
+    if config == "dense":
+        from ai.retrieval.dense import DenseIndex
+
+        dense = DenseIndex(store)
+        return lambda q, k, s: dense.search(q, k=k)
+    if config == "hybrid":
+        from ai.retrieval.dense import DenseIndex
+        from ai.retrieval.hybrid import HybridIndex
+
+        hyb = HybridIndex(BM25Index(store), DenseIndex(store))
+        return lambda q, k, s: hyb.search(q, k=k, scheme=s)
+    if config == "hybrid_rerank":
+        from ai.retrieval.dense import DenseIndex
+        from ai.retrieval.hybrid import HybridIndex, rrf_fuse
+        from ai.retrieval.rerank import Reranker
+
+        bm25 = BM25Index(store)
+        dense = DenseIndex(store)
+
+        def search(q: str, k: int, s: str | None):
+            pool = rrf_fuse(dense.search(q, k=15), bm25.search(q, k=15, scheme=s))[:15]
+            return Reranker.rerank(q, pool, store, k=k)
+
+        return search
+    raise ValueError(f"unknown config {config}")
+
 EVAL_FILE = Path("data/benchmark/retrieval_eval.jsonl")
 RESULTS_DIR = Path("experiments/results")
 KS = (1, 3, 5, 10)
@@ -48,9 +80,9 @@ def coverage(gold: set[str], ranked: list[str], k: int = 10) -> float:
 
 def run(config: str) -> dict:
     store = ChunkStore()
-    bm25 = BM25Index(store)
+    search = _build_search(config, store)
 
-    items = [json.loads(l) for l in EVAL_FILE.open()]
+    items = [json.loads(line) for line in EVAL_FILE.open()]
     per_item = []
     rec_sums = dict.fromkeys(KS, 0.0)
     mrr_sum = 0.0
@@ -58,10 +90,7 @@ def run(config: str) -> dict:
 
     for it in items:
         gold = set(it["gold_chunk_ids"])
-        if config == "lexical":
-            hits = bm25.search(it["question"], k=max(KS), scheme=it["scheme"])
-        else:
-            raise ValueError(f"unknown config {config}")
+        hits = search(it["question"], max(KS), it["scheme"])
         ranked = [cid for cid, _ in hits]
 
         rec = {k: recall_at_k(gold, ranked, k) for k in KS}

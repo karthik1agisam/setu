@@ -1,0 +1,178 @@
+{
+  "config": "dense",
+  "n": 12,
+  "recall_at": {
+    "1": 0.16666666666666666,
+    "3": 0.5,
+    "5": 0.5833333333333334,
+    "10": 0.6666666666666666
+  },
+  "mrr": 0.36041666666666666,
+  "coverage@10": 0.5,
+  "per_item": [
+    {
+      "qid": "re01",
+      "top1": "pmkisan:faq:0001",
+      "gold": [
+        "pmkisan:operational_guidelines_2019:0001",
+        "pmkisan:operational_guidelines_2019:0002"
+      ],
+      "r@1": 0.0,
+      "r@3": 1.0,
+      "r@5": 1.0,
+      "r@10": 1.0,
+      "mrr": 0.5,
+      "coverage": 0.5
+    },
+    {
+      "qid": "re02",
+      "top1": "pmkisan:faq:0001",
+      "gold": [
+        "pmkisan:operational_guidelines_2019:0002"
+      ],
+      "r@1": 0.0,
+      "r@3": 0.0,
+      "r@5": 0.0,
+      "r@10": 0.0,
+      "mrr": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "qid": "re03",
+      "top1": "pmkisan:faq:0001",
+      "gold": [
+        "pmkisan:operational_guidelines_2019:0002"
+      ],
+      "r@1": 0.0,
+      "r@3": 0.0,
+      "r@5": 0.0,
+      "r@10": 0.0,
+      "mrr": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "qid": "re04",
+      "top1": "pmkisan:faq:0001",
+      "gold": [
+        "pmkisan:faq:0001",
+        "pmkisan:faq:0002"
+      ],
+      "r@1": 1.0,
+      "r@3": 1.0,
+      "r@5": 1.0,
+      "r@10": 1.0,
+      "mrr": 1.0,
+      "coverage": 0.5
+    },
+    {
+      "qid": "re05",
+      "top1": "pmkisan:operational_guidelines_2019:0005",
+      "gold": [
+        "pmkisan:faq:0005"
+      ],
+      "r@1": 0.0,
+      "r@3": 0.0,
+      "r@5": 0.0,
+      "r@10": 1.0,
+      "mrr": 0.125,
+      "coverage": 1.0
+    },
+    {
+      "qid": "re06",
+      "top1": "pmayg:framework_for_implementation_2022:0014",
+      "gold": [
+        "pmayg:framework_for_implementation_2022:0005",
+        "pmayg:framework_for_implementation_2022:0023"
+      ],
+      "r@1": 0.0,
+      "r@3": 0.0,
+      "r@5": 1.0,
+      "r@10": 1.0,
+      "mrr": 0.2,
+      "coverage": 0.5
+    },
+    {
+      "qid": "re07",
+      "top1": "pmayg:framework_for_implementation_2022:0028",
+      "gold": [
+        "pmayg:framework_for_implementation_2022:0014",
+        "pmayg:framework_for_implementation_2022:0023"
+      ],
+      "r@1": 0.0,
+      "r@3": 1.0,
+      "r@5": 1.0,
+      "r@10": 1.0,
+      "mrr": 0.5,
+      "coverage": 0.5
+    },
+    {
+      "qid": "re08",
+      "top1": "pmayg:framework_for_implementation_2022:0046",
+      "gold": [
+        "pmayg:framework_for_implementation_2022:0047",
+        "pmayg:framework_for_implementation_2022:0052"
+      ],
+      "r@1": 0.0,
+      "r@3": 0.0,
+      "r@5": 0.0,
+      "r@10": 0.0,
+      "mrr": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "qid": "re09",
+      "top1": "pmjay:beneficiary_empowerment_guidebook:0011",
+      "gold": [
+        "pmjay:beneficiary_empowerment_guidebook:0011",
+        "pmjay:beneficiary_empowerment_guidebook:0013"
+      ],
+      "r@1": 1.0,
+      "r@3": 1.0,
+      "r@5": 1.0,
+      "r@10": 1.0,
+      "mrr": 1.0,
+      "coverage": 1.0
+    },
+    {
+      "qid": "re10",
+      "top1": "pmjay:beneficiary_empowerment_guidebook:0013",
+      "gold": [
+        "pmjay:beneficiary_empowerment_guidebook:0012",
+        "pmjay:beneficiary_empowerment_guidebook:0014"
+      ],
+      "r@1": 0.0,
+      "r@3": 0.0,
+      "r@5": 0.0,
+      "r@10": 0.0,
+      "mrr": 0.0,
+      "coverage": 0.0
+    },
+    {
+      "qid": "re11",
+      "top1": "pmssc:scheme_guidelines:0001",
+      "gold": [
+        "pmssc:scheme_guidelines:0005",
+        "pmssc:scheme_guidelines:0008"
+      ],
+      "r@1": 0.0,
+      "r@3": 1.0,
+      "r@5": 1.0,
+      "r@10": 1.0,
+      "mrr": 0.5,
+      "coverage": 1.0
+    },
+    {
+      "qid": "re12",
+      "top1": "pmssc:scheme_guidelines:0001",
+      "gold": [
+        "pmssc:scheme_guidelines:0005"
+      ],
+      "r@1": 0.0,
+      "r@3": 1.0,
+      "r@5": 1.0,
+      "r@10": 1.0,
+      "mrr": 0.5,
+      "coverage": 1.0
+    }
+  ]
+}
