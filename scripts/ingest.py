@@ -50,7 +50,8 @@ def main() -> int:
                         "doc": row["filename"],
                         "doc_version": row["doc_version"],
                         "source_url": row["source_url"],
-                        "page": b.page,
+                        "page_start": b.page,
+                        "page_end": b.page_end,
                         "section_path": b.section_path,
                         "text": b.text,
                     }

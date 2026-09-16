@@ -34,9 +34,13 @@ BARE_ROMAN_RE = re.compile(r"^([ivx]{1,4})[.)]\s+(?=\S)", re.IGNORECASE)
 AMBIGUOUS = {"i", "v", "x"}  # chars that are both letters and roman numerals
 
 
+STANDALONE_NUM_RE = re.compile(r"^(\d+(?:\.\d+)*)\.?$")  # "5." or "5.1" alone on a line
+
+
 @dataclass
 class Block:
     page: int  # page where the block starts
+    page_end: int  # page where the block ends
     section_path: str  # "4 > 4.1 > (b) > (iii)"; "" = preamble
     text: str
 
@@ -45,11 +49,31 @@ def _number_depth(num: str) -> int:
     return num.count(".") + 1
 
 
+def _merge_standalone_numbers(lines: list[str]) -> list[str]:
+    """Join a line that is only a clause number ("5.", "5.1") with the next line.
+
+    Government PDFs often render the clause number on its own line — without
+    this, the number attaches to the previous clause and its content is
+    silently absorbed into the wrong block.
+    """
+    out: list[str] = []
+    i = 0
+    while i < len(lines):
+        if STANDALONE_NUM_RE.match(lines[i]) and i + 1 < len(lines):
+            out.append(f"{lines[i]} {lines[i + 1]}")
+            i += 2
+        else:
+            out.append(lines[i])
+            i += 1
+    return out
+
+
 def parse_blocks(pages: list[PageText]) -> list[Block]:
     blocks: list[Block] = []
     path: list[str] = []  # one label per depth level
     buf: list[str] = []
     buf_page = 1
+    buf_end = 1
     have_buf = False
     # expected next letter per depth, e.g. after "(b)" at depth d → {d: "c"}
     expected_letter: dict[int, str] = {}
@@ -61,7 +85,9 @@ def parse_blocks(pages: list[PageText]) -> list[Block]:
             # without separately-detected "6"/"6.2" heading lines; the depth is
             # already encoded in the label itself
             sp = " > ".join(c for c in path if c)
-            blocks.append(Block(page=buf_page, section_path=sp, text=" ".join(buf)))
+            blocks.append(
+                Block(page=buf_page, page_end=buf_end, section_path=sp, text=" ".join(buf))
+            )
             buf = []
             have_buf = False
 
@@ -76,7 +102,7 @@ def parse_blocks(pages: list[PageText]) -> list[Block]:
                 del expected_letter[k]
 
     for p in pages:
-        for ln in p.lines:
+        for ln in _merge_standalone_numbers(p.lines):
             m_num = NUM_RE.match(ln)
             if m_num and DATE_RE.match(ln):
                 m_num = None  # date literal, not a clause number
@@ -129,6 +155,7 @@ def parse_blocks(pages: list[PageText]) -> list[Block]:
                     buf_page = p.page
                 buf.append(ln)
                 have_buf = True
+            buf_end = p.page
     flush()
     return blocks
 

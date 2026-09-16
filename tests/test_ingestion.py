@@ -56,6 +56,31 @@ def test_structure_numbered_hierarchy():
     assert "4 > 4.1 > (b) > (ii)" in paths
 
 
+def test_structure_standalone_number_line():
+    """PDFs often render the clause number alone on a line (real corpus bug:
+    PMS-SC section 5 was silently absorbed into section 4)."""
+    pages = [
+        PageText(
+            page=1,
+            lines=[
+                "4. Eligibility of Institutions",
+                "4.1 Institutions must be recognized.",
+                "5.",
+                "Conditions of Eligibility of Students",
+                "5.1",
+                "The scholarships are open to Nationals of India only.",
+            ],
+        )
+    ]
+    blocks = parse_blocks(pages)
+    paths = [b.section_path for b in blocks]
+    texts = " ".join(b.text for b in blocks)
+    assert "4" in paths
+    assert "5" in paths
+    assert "5 > 5.1" in paths
+    assert "Nationals of India" in texts
+
+
 def test_structure_preamble_when_no_numbering():
     pages = [PageText(page=1, lines=["Just some intro text.", "More text."])]
     blocks = parse_blocks(pages)

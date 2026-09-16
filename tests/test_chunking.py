@@ -8,12 +8,19 @@ META = {
     "doc_version": "v1",
     "source_url": "https://x.gov.in/d.pdf",
     "section_path": "4 > 4.1",
-    "page": 3,
+    "page_start": 3,
+    "page_end": 3,
 }
 
 
 def _blk(text: str, path: str = "4 > 4.1", page: int = 3) -> dict:
-    return {**META, "section_path": path, "page": page, "text": text}
+    return {
+        **META,
+        "section_path": path,
+        "page_start": page,
+        "page_end": page,
+        "text": text,
+    }
 
 
 def test_short_siblings_merge():

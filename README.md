@@ -10,18 +10,16 @@ SETU says so — it never invents rules.
 
 ## Status
 
-Phase 3 — ingestion + chunking complete: official guideline PDFs for 4
-schemes (PM-KISAN, PM-JAY, PMAY-G, PMS-SC) are parsed into 492 clause blocks
-→ 177 retrieval chunks (median ~380 tokens), each carrying full provenance
-(`scheme → doc → section_path → page range → source_url → doc_version`).
+Phase 4 — retrieval foundation complete: 4 schemes → 170 clause-level chunks
+with full provenance; BM25 lexical baseline + eval harness running
+(R@5=0.500, MRR=0.231 on the seed eval set — see `docs/evaluation.md`).
 Development proceeds in verified phases per
 [`docs/SETU_MASTER_IMPLEMENTATION_PLAN.md`](docs/SETU_MASTER_IMPLEMENTATION_PLAN.md).
 
 ```bash
 uv run python scripts/download_docs.py   # fetch + validate corpus
-make ingest                            # PDFs → clause blocks
-make chunk                             # blocks → retrieval chunks
-make inspect-chunks                    # validate provenance + samples
+make ingest && make chunk              # PDFs → chunks
+make eval-retrieval CONFIG=lexical     # retrieval metrics
 ```
 
 ## Setup

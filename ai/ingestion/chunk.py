@@ -82,8 +82,8 @@ def chunk_blocks(records: list[dict], doc_stem: str) -> list[Chunk]:
                 doc_version=rec_group[0]["doc_version"],
                 source_url=rec_group[0]["source_url"],
                 section_paths=[r["section_path"] for r in rec_group if r["section_path"]],
-                page_start=min(r["page"] for r in rec_group),
-                page_end=max(r["page"] for r in rec_group),
+                page_start=min(r["page_start"] for r in rec_group),
+                page_end=max(r["page_end"] for r in rec_group),
                 n_words=_words(text),
                 text=text,
             )

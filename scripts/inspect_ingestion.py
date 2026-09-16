@@ -31,7 +31,7 @@ def main() -> int:
     for f in files:
         recs = [json.loads(line) for line in f.open()]
         structured = sum(1 for r in recs if r["section_path"])
-        missing_prov = sum(1 for r in recs if not r["source_url"] or not r["page"])
+        missing_prov = sum(1 for r in recs if not r["source_url"] or not r["page_start"])
         pct = 100 * structured / max(len(recs), 1)
         print(f"\n=== {f.parent.name}/{f.name}")
         print(
@@ -42,7 +42,7 @@ def main() -> int:
             failures += 1
         for r in recs[: args.samples]:
             path = r["section_path"] or "(preamble)"
-            print(f"  p{r['page']} [{path}] {r['text'][:110]}…")
+            print(f"  p{r['page_start']}-{r['page_end']} [{path}] {r['text'][:110]}…")
     return 1 if failures else 0
 
 

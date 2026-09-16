@@ -30,3 +30,6 @@ chunk:  ## blocks → retrieval chunks
 
 inspect-chunks: ## validate chunk provenance + samples
 	uv run python scripts/inspect_chunks.py
+
+eval-retrieval: ## retrieval eval (CONFIG=lexical|...)
+	uv run python evaluation/eval_retrieval.py --config $(or $(CONFIG),lexical) --verbose

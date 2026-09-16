@@ -1,0 +1,12 @@
+{"qid":"re01","question":"Who is eligible for PM-KISAN and who is excluded?","scheme":"pmkisan","gold_chunk_ids":["pmkisan:operational_guidelines_2019:0002","pmkisan:operational_guidelines_2019:0001"]}
+{"qid":"re02","question":"Is a government employee eligible for PM-KISAN?","scheme":"pmkisan","gold_chunk_ids":["pmkisan:operational_guidelines_2019:0002"]}
+{"qid":"re03","question":"Do income tax payers get PM-KISAN benefits?","scheme":"pmkisan","gold_chunk_ids":["pmkisan:operational_guidelines_2019:0002"]}
+{"qid":"re04","question":"How much money does PM-KISAN pay per year?","scheme":"pmkisan","gold_chunk_ids":["pmkisan:faq:0001","pmkisan:faq:0002"]}
+{"qid":"re05","question":"Is land transferred between December 2018 and January 2019 eligible for PM-KISAN?","scheme":"pmkisan","gold_chunk_ids":["pmkisan:faq:0005"]}
+{"qid":"re06","question":"Who is eligible for a PMAY-G house?","scheme":"pmayg","gold_chunk_ids":["pmayg:framework_for_implementation_2022:0023","pmayg:framework_for_implementation_2022:0005"]}
+{"qid":"re07","question":"Does a family living in a kutcha house qualify for PMAY-G?","scheme":"pmayg","gold_chunk_ids":["pmayg:framework_for_implementation_2022:0023","pmayg:framework_for_implementation_2022:0014"]}
+{"qid":"re08","question":"What role does the Gram Sabha play in PMAY-G beneficiary selection?","scheme":"pmayg","gold_chunk_ids":["pmayg:framework_for_implementation_2022:0047","pmayg:framework_for_implementation_2022:0052"]}
+{"qid":"re09","question":"What is the PM-JAY helpline number for beneficiaries?","scheme":"pmjay","gold_chunk_ids":["pmjay:beneficiary_empowerment_guidebook:0011","pmjay:beneficiary_empowerment_guidebook:0013"]}
+{"qid":"re10","question":"Do patients have to pay for PM-JAY hospitalization?","scheme":"pmjay","gold_chunk_ids":["pmjay:beneficiary_empowerment_guidebook:0014","pmjay:beneficiary_empowerment_guidebook:0012"]}
+{"qid":"re11","question":"What is the parental income limit for the Post Matric Scholarship for SC students?","scheme":"pmssc","gold_chunk_ids":["pmssc:scheme_guidelines:0005","pmssc:scheme_guidelines:0008"]}
+{"qid":"re12","question":"Can a non-SC student get the Post Matric SC scholarship?","scheme":"pmssc","gold_chunk_ids":["pmssc:scheme_guidelines:0005"]}
