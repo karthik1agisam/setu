@@ -10,17 +10,18 @@ SETU says so — it never invents rules.
 
 ## Status
 
-Phase 2 — document ingestion complete: official guideline PDFs for 4
-schemes (PM-KISAN, PM-JAY, PMAY-G, PMS-SC) are parsed into 492 structured
-clause blocks with full provenance (`scheme → doc → section_path → page →
-source_url`). No AI functionality yet; development proceeds in verified
-phases per
+Phase 3 — ingestion + chunking complete: official guideline PDFs for 4
+schemes (PM-KISAN, PM-JAY, PMAY-G, PMS-SC) are parsed into 492 clause blocks
+→ 177 retrieval chunks (median ~380 tokens), each carrying full provenance
+(`scheme → doc → section_path → page range → source_url → doc_version`).
+Development proceeds in verified phases per
 [`docs/SETU_MASTER_IMPLEMENTATION_PLAN.md`](docs/SETU_MASTER_IMPLEMENTATION_PLAN.md).
 
 ```bash
 uv run python scripts/download_docs.py   # fetch + validate corpus
-make ingest                            # PDFs → clause blocks (data/processed/)
-make inspect                           # block stats + samples
+make ingest                            # PDFs → clause blocks
+make chunk                             # blocks → retrieval chunks
+make inspect-chunks                    # validate provenance + samples
 ```
 
 ## Setup

@@ -34,7 +34,10 @@ def main() -> int:
         missing_prov = sum(1 for r in recs if not r["source_url"] or not r["page"])
         pct = 100 * structured / max(len(recs), 1)
         print(f"\n=== {f.parent.name}/{f.name}")
-        print(f"blocks={len(recs)}  structured={structured} ({pct:.0f}%)  missing_provenance={missing_prov}")
+        print(
+            f"blocks={len(recs)}  structured={structured} ({pct:.0f}%)  "
+            f"missing_provenance={missing_prov}"
+        )
         if missing_prov:
             failures += 1
         for r in recs[: args.samples]:

@@ -24,3 +24,9 @@ ingest: ## PDF → structured clause blocks (data/processed/)
 
 inspect: ## inspect ingestion output
 	uv run python scripts/inspect_ingestion.py
+
+chunk:  ## blocks → retrieval chunks
+	uv run python scripts/chunk_blocks.py
+
+inspect-chunks: ## validate chunk provenance + samples
+	uv run python scripts/inspect_chunks.py
