@@ -1,0 +1,20 @@
+.PHONY: setup sync test lint format clean
+
+setup:  ## create venv (python 3.12) and install deps
+	uv venv --python 3.12
+	uv sync --extra dev
+
+sync:   ## re-sync deps after pyproject changes
+	uv sync --extra dev
+
+test:   ## run test suite
+	uv run pytest -q
+
+lint:   ## ruff lint
+	uv run ruff check .
+
+format: ## ruff format
+	uv run ruff format .
+
+clean:  ## remove caches
+	rm -rf .pytest_cache .ruff_cache **/__pycache__

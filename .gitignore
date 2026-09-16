@@ -1,0 +1,32 @@
+# env / secrets
+.env
+.venv/
+venv/
+
+# python
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# node
+node_modules/
+frontend/dist/
+
+# data artifacts — PDFs and generated indexes are reproducible, not committed
+data/raw/**/*.pdf
+data/processed/
+data/voice/
+models/
+*.faiss
+*.pkl
+*.bin
+*.gguf
+*.wav
+*.mp3
+
+# os / editor
+.DS_Store
+.vscode/
+.idea/
