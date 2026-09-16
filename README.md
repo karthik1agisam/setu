@@ -10,9 +10,15 @@ SETU says so — it never invents rules.
 
 ## Status
 
-Phase 0 — engineering foundation complete. No AI functionality yet;
-development proceeds in verified phases per
+Phase 1 — document acquisition complete: official guideline PDFs for 4
+schemes (PM-KISAN, PM-JAY, PMAY-G, PMS-SC) downloaded with provenance
+manifest (`data/raw/manifest.csv`). No AI functionality yet; development
+proceeds in verified phases per
 [`docs/SETU_MASTER_IMPLEMENTATION_PLAN.md`](docs/SETU_MASTER_IMPLEMENTATION_PLAN.md).
+
+```bash
+uv run python scripts/download_docs.py   # fetch + validate corpus
+```
 
 ## Setup
 

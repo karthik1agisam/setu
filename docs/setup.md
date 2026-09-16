@@ -21,6 +21,11 @@ make lint         # ruff
 ```
 
 ## What works right now
-Phase 0 state: repository skeleton, dependency management, tests, lint.
+Phase 1 state: repository skeleton + official document acquisition.
+
+```bash
+uv run python scripts/download_docs.py   # downloads + validates scheme PDFs, writes data/raw/manifest.csv
+```
+
 No AI functionality exists yet — see `docs/SETU_MASTER_IMPLEMENTATION_PLAN.md`
-for the full phase plan.
+for the full phase plan and `docs/data_selection.md` for the scheme corpus.
