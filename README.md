@@ -10,14 +10,17 @@ SETU says so — it never invents rules.
 
 ## Status
 
-Phase 1 — document acquisition complete: official guideline PDFs for 4
-schemes (PM-KISAN, PM-JAY, PMAY-G, PMS-SC) downloaded with provenance
-manifest (`data/raw/manifest.csv`). No AI functionality yet; development
-proceeds in verified phases per
+Phase 2 — document ingestion complete: official guideline PDFs for 4
+schemes (PM-KISAN, PM-JAY, PMAY-G, PMS-SC) are parsed into 492 structured
+clause blocks with full provenance (`scheme → doc → section_path → page →
+source_url`). No AI functionality yet; development proceeds in verified
+phases per
 [`docs/SETU_MASTER_IMPLEMENTATION_PLAN.md`](docs/SETU_MASTER_IMPLEMENTATION_PLAN.md).
 
 ```bash
 uv run python scripts/download_docs.py   # fetch + validate corpus
+make ingest                            # PDFs → clause blocks (data/processed/)
+make inspect                           # block stats + samples
 ```
 
 ## Setup

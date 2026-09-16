@@ -18,3 +18,9 @@ format: ## ruff format
 
 clean:  ## remove caches
 	rm -rf .pytest_cache .ruff_cache **/__pycache__
+
+ingest: ## PDF → structured clause blocks (data/processed/)
+	uv run python scripts/ingest.py
+
+inspect: ## inspect ingestion output
+	uv run python scripts/inspect_ingestion.py
