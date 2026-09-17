@@ -75,3 +75,15 @@ Bounded by verifier accuracy (0.667) — some flags are NLI false-positives
 (e.g., a correct free-treatment claim scored as contradicted). The rate is an
 estimate, not ground truth; the verified-pipeline comparison is the
 ablation's real test.
+
+## Groundedness gate (Phase 10)
+
+`ai/verification/gate.py` — release / clarify / abstain. Deterministic
+numeric checker (`numeric.py`) parses Indian formats (lakh/crore/Rs.) and
+flags claim numbers absent from evidence — catches what NLI misses.
+
+Observed behavior (real run): correct `eligible` verdict (PMS-SC, ₹2L income)
+→ gate **abstained** because NLI left 2/3 generated claims unsupported.
+False abstention is the cost of a weak verifier — the gate prefers silence
+over a possibly-wrong answer. **False-abstention rate is now a required
+metric for the full benchmark** (n=12 seed set can't measure it reliably).
