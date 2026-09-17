@@ -26,6 +26,7 @@ uv run python scripts/rag_query.py "your question"          # baseline RAG, unve
 uv run python scripts/run_baseline.py                       # baseline over seed eval set
 uv run python scripts/calibrate_nli.py                      # NLI threshold calibration
 uv run python evaluation/eval_claims.py                     # claim-level verification eval
+uv run python scripts/ask.py "మీ ప్రశ్న"                    # multilingual query (te/hi/en)
 ```
 
 ## Setup
