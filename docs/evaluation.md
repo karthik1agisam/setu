@@ -130,3 +130,18 @@ consistent signal across Phases 12–13: **Telugu loanwords corrupt on both
 ends** ("స్కాలర్‌షిప్"→"సకాలా శిప్కు" in TTS, similar mangling in ASR).
 te voice UX should treat text transcript as primary, audio secondary;
 IndicF5 (with HF_TOKEN) may improve quality — untested.
+
+## End-to-end latency (Phase 14, measured via API)
+
+| Stage | ms |
+|---|---|
+| understand (LLM) | 7,668 |
+| retrieve (BM25) | 5 |
+| reason (LLM) | 11,161 |
+| answer+claims+NLI+gate | 16,182 |
+| **total** | **35,016** |
+
+35s/query on CPU — the verified pipeline is correct but slow for interactive
+use. 3 sequential LLM calls dominate; NLI scoring adds seconds. Phase 25
+candidates: merge understand+reason into one call, smaller model, NLI on
+fewer chunks, result caching.

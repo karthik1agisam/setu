@@ -33,3 +33,6 @@ inspect-chunks: ## validate chunk provenance + samples
 
 eval-retrieval: ## retrieval eval (CONFIG=lexical|...)
 	uv run python evaluation/eval_retrieval.py --config $(or $(CONFIG),lexical) --verbose
+
+serve:  ## FastAPI backend on :8000
+	uv run uvicorn backend.app:app --host 0.0.0.0 --port 8000
