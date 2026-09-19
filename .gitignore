@@ -31,3 +31,4 @@ models/
 .vscode/
 .idea/
 data/processed/index/
+data/benchmark/audio/

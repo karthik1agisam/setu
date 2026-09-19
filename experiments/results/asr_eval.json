@@ -1,0 +1,69 @@
+{
+  "per_lang": {
+    "en": {
+      "n": 2,
+      "wer": 0.163,
+      "cer": 0.071
+    },
+    "hi": {
+      "n": 2,
+      "wer": 0.136,
+      "cer": 0.086
+    },
+    "te": {
+      "n": 2,
+      "wer": 0.217,
+      "cer": 0.135
+    }
+  },
+  "rows": [
+    {
+      "id": "data/benchmark/audio/en1.aiff",
+      "lang": "en",
+      "ref": "I am a farmer with two acres of land. Can I get PM-KISAN benefits?",
+      "hyp": "I am a farm with 2 acres of land. Can I get PM Kizan benefits?",
+      "wer": 0.2,
+      "cer": 0.094
+    },
+    {
+      "id": "data/benchmark/audio/en2.aiff",
+      "lang": "en",
+      "ref": "My father earns two lakh rupees per year. Am I eligible for the post matric scholarship?",
+      "hyp": "My father earns 2 lakh rupees per year. Am I eligible for the post-matrix scholarship?",
+      "wer": 0.125,
+      "cer": 0.047
+    },
+    {
+      "id": "data/benchmark/audio/hi1.aiff",
+      "lang": "hi",
+      "ref": "\u092e\u0948\u0902 \u090f\u0915 \u0915\u093f\u0938\u093e\u0928 \u0939\u0942\u0901\u0964 \u0915\u094d\u092f\u093e \u092e\u0941\u091d\u0947 \u092a\u0940\u090f\u092e-\u0915\u093f\u0938\u093e\u0928 \u092f\u094b\u091c\u0928\u093e \u0915\u093e \u0932\u093e\u092d \u092e\u093f\u0932\u0947\u0917\u093e?",
+      "hyp": "\u092e\u0948\u0902 \u090f\u0915 \u0915\u093f\u0938\u093e\u0928 \u0939\u0942\u0901, \u0915\u094d\u092f\u093e \u092e\u0941\u091d\u0947 PM \u0915\u093f\u0938\u093e\u0928 \u092f\u094b\u091c\u0928\u093e \u0915\u093e \u0932\u093e\u092d \u092e\u093f\u0932\u0947\u0917\u093e?",
+      "wer": 0.087,
+      "cer": 0.083
+    },
+    {
+      "id": "data/benchmark/audio/hi2.aiff",
+      "lang": "hi",
+      "ref": "\u092e\u0947\u0930\u0947 \u092a\u093f\u0924\u093e \u0915\u0940 \u0938\u093e\u0932\u093e\u0928\u093e \u0906\u092f \u0926\u094b \u0932\u093e\u0916 \u0930\u0941\u092a\u092f\u0947 \u0939\u0948\u0964 \u0915\u094d\u092f\u093e \u092e\u0941\u091d\u0947 \u091b\u093e\u0924\u094d\u0930\u0935\u0943\u0924\u094d\u0924\u093f \u092e\u093f\u0932\u0947\u0917\u0940?",
+      "hyp": "\u092e\u0947\u0930\u0947 \u092a\u093f\u0924\u093e \u0915\u0940 \u0938\u093e\u0932\u093e\u0928\u093e \u0906\u092f\u0947 \u0926\u094b \u0932\u093e\u0915 \u0930\u0942\u092a\u090f \u0939\u0948, \u0915\u094d\u092f\u093e \u092e\u0941\u091d\u0947 \u091a\u093e\u0924\u094d\u0930\u0935\u0930\u093f\u0924\u0940 \u092e\u093f\u0932\u0947\u0917\u0940?",
+      "wer": 0.185,
+      "cer": 0.089
+    },
+    {
+      "id": "data/benchmark/audio/te1.aiff",
+      "lang": "te",
+      "ref": "\u0c28\u0c47\u0c28\u0c41 \u0c30\u0c48\u0c24\u0c41\u0c28\u0c3f. \u0c28\u0c3e\u0c15\u0c41 \u0c2a\u0c40\u0c0e\u0c02-\u0c15\u0c3f\u0c38\u0c3e\u0c28\u0c4d \u0c2a\u0c25\u0c15\u0c02 \u0c15\u0c3f\u0c02\u0c26 \u0c21\u0c2c\u0c4d\u0c2c\u0c41 \u0c35\u0c38\u0c4d\u0c24\u0c41\u0c02\u0c26\u0c3e?",
+      "hyp": "\u0c28\u0c47\u0c28\u0c41 \u0c30\u0c3f\u0c24\u0c41\u0c28\u0c3f \u0c28\u0c3e\u0c15\u0c41 \u0c2a\u0c3f\u0c2f\u0c47\u0c02 \u0c15\u0c3f\u0c38\u0c3e\u0c02 \u0c2a\u0c27\u0c15\u0c02 \u0c15\u0c3f\u0c02\u0c26\u0c3e \u0c26\u0c2c\u0c41 \u0c35\u0c38\u0c4d\u0c24\u0c41\u0c02\u0c26\u0c3e?",
+      "wer": 0.25,
+      "cer": 0.163
+    },
+    {
+      "id": "data/benchmark/audio/te2.aiff",
+      "lang": "te",
+      "ref": "\u0c28\u0c47\u0c28\u0c41 \u0c0e\u0c38\u0c4d\u0c38\u0c40 \u0c35\u0c3f\u0c26\u0c4d\u0c2f\u0c3e\u0c30\u0c4d\u0c25\u0c3f\u0c28\u0c3f. \u0c28\u0c3e\u0c15\u0c41 \u0c2a\u0c4b\u0c38\u0c4d\u0c1f\u0c4d \u0c2e\u0c46\u0c1f\u0c4d\u0c30\u0c3f\u0c15\u0c4d \u0c38\u0c4d\u0c15\u0c3e\u0c32\u0c30\u0c4d\u200c\u0c37\u0c3f\u0c2a\u0c4d \u0c35\u0c38\u0c4d\u0c24\u0c41\u0c02\u0c26\u0c3e?",
+      "hyp": "\u0c28\u0c47\u0c28\u0c41 \u0c2f\u0c38\u0c3f \u0c35\u0c3f\u0c26\u0c4d\u0c2f\u0c3e\u0c30\u0c4d\u0c24\u0c3f\u0c28\u0c3f \u0c28\u0c3e\u0c15\u0c41 \u0c2a\u0c4b\u0c38\u0c4d\u0c1f\u0c4d \u0c2e\u0c47\u0c1f\u0c4d\u0c30\u0c3f\u0c15\u0c4d \u0c38\u0c4d\u0c15\u0c4b\u0c32\u0c30\u0c4d\u0c38\u0c3f\u0c1f\u0c4d \u0c35\u0c38\u0c4d\u0c24\u0c41\u0c02\u0c26\u0c3e?",
+      "wer": 0.185,
+      "cer": 0.107
+    }
+  ]
+}

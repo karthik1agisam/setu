@@ -87,3 +87,26 @@ Observed behavior (real run): correct `eligible` verdict (PMS-SC, ₹2L income)
 False abstention is the cost of a weak verifier — the gate prefers silence
 over a possibly-wrong answer. **False-abstention rate is now a required
 metric for the full benchmark** (n=12 seed set can't measure it reliably).
+
+## ASR (Phase 12)
+
+faster-whisper `large-v3-turbo` (CTranslate2 INT8, CPU). Eval set: 6
+synthesized samples via macOS `say` voices (en_IN Rishi, hi_IN Lekha, te_IN
+Geeta) — `data/benchmark/asr_eval.jsonl`, real WER/CER via edit distance.
+
+```bash
+bash scripts/make_asr_samples.sh && uv run python evaluation/eval_asr.py
+```
+
+| Lang | WER | CER |
+|---|---|---|
+| en | 0.163 | 0.071 |
+| hi | 0.136 | 0.086 |
+| te | 0.217 | 0.135 |
+
+**Dominant failure mode: scheme-name corruption** — English loanwords get
+phonetically mangled ("PM-KISAN"→"PM Kizan", "స్కాలర్‌షిప్"→"స్కోలర్సిట్").
+This can break scheme-guessing downstream. Mitigation queued: ASR-output
+normalization map for known scheme names before translation. Caveat:
+synthesized speech ≠ real user audio; a small set of self-recorded samples
+will strengthen this eval later.

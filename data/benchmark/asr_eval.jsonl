@@ -1,0 +1,6 @@
+{"audio":"data/benchmark/audio/en1.aiff","reference":"I am a farmer with two acres of land. Can I get PM-KISAN benefits?","lang":"en"}
+{"audio":"data/benchmark/audio/en2.aiff","reference":"My father earns two lakh rupees per year. Am I eligible for the post matric scholarship?","lang":"en"}
+{"audio":"data/benchmark/audio/hi1.aiff","reference":"मैं एक किसान हूँ। क्या मुझे पीएम-किसान योजना का लाभ मिलेगा?","lang":"hi"}
+{"audio":"data/benchmark/audio/hi2.aiff","reference":"मेरे पिता की सालाना आय दो लाख रुपये है। क्या मुझे छात्रवृत्ति मिलेगी?","lang":"hi"}
+{"audio":"data/benchmark/audio/te1.aiff","reference":"నేను రైతుని. నాకు పీఎం-కిసాన్ పథకం కింద డబ్బు వస్తుందా?","lang":"te"}
+{"audio":"data/benchmark/audio/te2.aiff","reference":"నేను ఎస్సీ విద్యార్థిని. నాకు పోస్ట్ మెట్రిక్ స్కాలర్‌షిప్ వస్తుందా?","lang":"te"}

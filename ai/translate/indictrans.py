@@ -33,8 +33,8 @@ class Translator:
         if cls._backend is not None:
             return cls._backend == "indictrans2"
         try:
-            from IndicTransToolkit import IndicProcessor
             from huggingface_hub import hf_hub_download
+            from IndicTransToolkit import IndicProcessor
 
             # metadata is public even on gated repos — probe an actual file
             hf_hub_download(INDIC_EN, "config.json")
