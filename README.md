@@ -27,6 +27,10 @@ uv run python scripts/run_baseline.py                       # baseline over seed
 uv run python scripts/calibrate_nli.py                      # NLI threshold calibration
 uv run python evaluation/eval_claims.py                     # claim-level verification eval
 uv run python scripts/ask.py "మీ ప్రశ్న"                    # multilingual query (te/hi/en)
+
+# full stack
+make serve      # API on :8000
+make frontend   # UI on :5173 (new terminal)
 ```
 
 ## Setup

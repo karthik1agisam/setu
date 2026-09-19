@@ -36,3 +36,6 @@ eval-retrieval: ## retrieval eval (CONFIG=lexical|...)
 
 serve:  ## FastAPI backend on :8000
 	uv run uvicorn backend.app:app --host 0.0.0.0 --port 8000
+
+frontend:  ## React dev server on :5173 (proxies /api → :8000)
+	cd frontend && npm install && npm run dev

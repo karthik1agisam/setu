@@ -14,7 +14,7 @@ immediately, never persisted.
 from __future__ import annotations
 
 import tempfile
-from pathlib import Path
+from typing import Annotated
 
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
@@ -73,7 +73,7 @@ def ask(req: AskRequest):
 
 
 @app.post("/ask/audio", response_model=AskResponse)
-async def ask_audio(file: UploadFile = File(...)):
+async def ask_audio(file: Annotated[UploadFile, File()]):
     if not ollama_up():
         raise HTTPException(503, "Ollama not running")
     if file.content_type and not file.content_type.startswith(ALLOWED_AUDIO_PREFIXES):
