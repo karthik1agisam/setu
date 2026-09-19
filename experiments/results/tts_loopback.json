@@ -1,0 +1,23 @@
+[
+  {
+    "lang": "en",
+    "input": "You are eligible for the scholarship.",
+    "asr": "You are eligible for the scholarship.",
+    "wer": 0.0,
+    "cer": 0.0
+  },
+  {
+    "lang": "hi",
+    "input": "आप छात्रवृत्ति के लिए पात्र हैं।",
+    "asr": "आप छात रवरित्ती के लिए पात रहें",
+    "wer": 0.231,
+    "cer": 0.074
+  },
+  {
+    "lang": "te",
+    "input": "మీరు స్కాలర్‌షిప్ కు అర్హులు.",
+    "asr": "మిరు సకాలా శిప్కు అర్కులు",
+    "wer": 0.455,
+    "cer": 0.174
+  }
+]

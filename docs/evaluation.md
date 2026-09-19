@@ -110,3 +110,23 @@ This can break scheme-guessing downstream. Mitigation queued: ASR-output
 normalization map for known scheme names before translation. Caveat:
 synthesized speech ≠ real user audio; a small set of self-recorded samples
 will strengthen this eval later.
+
+## TTS (Phase 13)
+
+Backend ladder: IndicF5 (gated → optional) → **MMS-TTS** (ungated default,
+`facebook/mms-tts-{eng,hin,tel}`, VITS 16kHz) → macOS `say` (dev fallback).
+
+Loopback eval (TTS → ASR → WER vs input — intelligibility proxy,
+`evaluation/eval_tts.py`):
+
+| Lang | loopback WER | CER |
+|---|---|---|
+| en | 0.000 | 0.000 |
+| hi | 0.231 | 0.074 |
+| te | 0.455 | 0.174 |
+
+Caveat: loopback conflates TTS and ASR error — te compounds both. The
+consistent signal across Phases 12–13: **Telugu loanwords corrupt on both
+ends** ("స్కాలర్‌షిప్"→"సకాలా శిప్కు" in TTS, similar mangling in ASR).
+te voice UX should treat text transcript as primary, audio secondary;
+IndicF5 (with HF_TOKEN) may improve quality — untested.
